@@ -1,7 +1,7 @@
 <?php
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminPanel\HomeController as  AdminHomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +28,12 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+// **************** Admin Panel Routes**************
+
+Route::get('/admin',[AdminHomeController::class,'index'])->name(name:'admin');
+
+// **************** Admin Category Routes**************
+Route::get('/admin/category',[\App\Http\Controllers\AdminPanel\CategoryController::class,'index'])->name(name:'admin_category');
+Route::get('/admin/category/create',[\App\Http\Controllers\AdminPanel\CategoryController::class,'create'])->name(name:'admin_category_create');
+Route::post('/admin/category/store',[\App\Http\Controllers\AdminPanel\CategoryController::class,'store'])->name(name:'admin_category_store');
