@@ -1,14 +1,14 @@
 @extends('layouts.adminbase')
-@section('title','Add Category')
+@section('title','Edit Category :'.$data->title)
 @section('content')
 
 <!-- Content wrapper -->
 <div class="content-wrapper"><br>
 <br>
-    <h1>Add Category</h1>
+    <h1>Edit Category: {{$data->title}}</h1>
     
 
-    <form role="form" action="/admin/category/store" method="post">
+    <form role="form" action="/admin/category/update/{{$data->id}}" method="post">
     <div class="col-xl">
                   <div class="card mb-4">
 
@@ -24,17 +24,17 @@
 
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Title</label>
-                          <input type="text" class="form-control" id="basic-default-fullname" placeholder="Title" name="title">
+                          <input type="text" class="form-control" id="basic-default-fullname" value="{{$data->title}}" placeholder="Title" name="title">
                         </div>
 
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Keyword</label>
-                          <input type="text" class="form-control" name="keyword" placeholder="Keyword">
+                          <input type="text" class="form-control" name="keyword" value="{{$data->keyword}}" >
                         </div>
 
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Description</label>
-                          <input type="text" class="form-control" name="description" placeholder="Description">
+                          <input type="text" class="form-control" name="description" value="{{$data->description}}">
                         </div>
 
                         <div class="mb-3">
@@ -49,12 +49,13 @@
                         <div class="mb-3"> 
                           <label>Status</label>
                           <select class="form-control" id="form-control" name="status">
+                            <option selected>{{$data->status}}</option>
                             <option>True</option>
                             <option>False</option>
                           </select>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Update Data</button>
                       </form>
                     </div>
                   </div>
