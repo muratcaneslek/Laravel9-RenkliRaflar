@@ -4,8 +4,9 @@
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
             <a href="index.html" class="app-brand-link">
-              <span class="app-brand-logo demo">
-                <svg
+              <a href="/admin">
+                <span class="app-brand-logo demo">
+                 <svg
                   width="25"
                   viewBox="0 0 25 42"
                   version="1.1"
@@ -59,7 +60,10 @@
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+              </a>
+              
+              <a href="/admin"><span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span></a>
+             
             </a>
 
             <a href="{{asset('assets')}}/admin/js/sidebar.js" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -106,7 +110,7 @@
             </li>
             
               <li class="menu-item">
-                <a href="javascript:void(0);" class="menu-link">
+                <a href="admin/category" class="menu-link">
                 <ion-icon class="menu-icon" name="apps-outline"  style="color:red;"></ion-icon>
                 <div data-i18n="Orders">Categories</div>
               </a>
