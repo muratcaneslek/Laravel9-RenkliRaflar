@@ -50,12 +50,12 @@
 							<div class="item">
 								<div class="col-sm-6">
 									<h1></h1><br>
-									<h2>Büyük Kampanya</h2><br>
-									<p>Ephesus Yayınlarında %45 indirim sizleri bekliyor.</p>
+									<h2>Fırsatı Kaçırma</h2><br>
+									<p>Erken al az öde.</p>
 									<button type="button" class="btn btn-default get">Sayfaya gitmek için</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="{{asset('assets')}}/images/home/3.png" class="girl img-responsive" alt="" />
+									<img src="{{asset('assets')}}/images/home/4.png" class="girl img-responsive" alt="" />
 								</div>
 							</div>
 							

@@ -5,8 +5,8 @@
 <!-- Content wrapper -->
 <div class="content-wrapper"><br>
 <br>
-    <h1>Category List</h1>
-    <small class="text-muted float-end" style="text-align: right"> <a href="/admin">Home</a></small>
+<a href="/admin/category/create" class="btn btn-block btn-success btn-lg" style="background-color:#003E9F;width:319px;">Add Category</a>
+    <small class="text-muted float-end" style="text-align: right; height: 25px;"> <a href="/admin">Home</a>/Category List</small>
     <div class="card">
         
                 <h5 class="card-header">Category List</h5>

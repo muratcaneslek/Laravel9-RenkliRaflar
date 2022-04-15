@@ -29,10 +29,11 @@
     @section('sidebar')
         @include("home.sidebar")
     @show
-
+    @include("home.slider")
     @yield('content')
 
     <@include("home.footer")
     @yield('foot')
+
 </body>
 </html>

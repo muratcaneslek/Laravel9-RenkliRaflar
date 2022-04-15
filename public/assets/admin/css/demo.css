@@ -15,7 +15,6 @@
 }
 
 
-
 .content-wrapper.content-re{
   text-align: right;
 }
@@ -56,6 +55,7 @@
 /* Navbar page z-index issue solution */
 .content-wrapper .navbar {
   z-index: auto;
+
 }
 
 /*
