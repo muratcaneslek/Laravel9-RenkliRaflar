@@ -8,7 +8,7 @@
     <h1>Edit Category: {{$data->title}}</h1>
     
 
-    <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
+    <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
     <div class="col-xl">
                   <div class="card mb-4">
 
@@ -38,10 +38,11 @@
                         </div>
 
                         <div class="mb-3">
-                          <label for="basic-default-fullname" name="image">Choose Image File</label>
+                          
+                          <label for="basic-default-fullname">Choose Image File</label>
                           <div class="input-group">
                             <div class="custom-file">
-                              <input type="file" class="form-control" id="exampleInputFile">
+                              <input type="file" class="form-control" name="image" id="exampleInputFile">
                             </div>
                           </div>
                         </div>

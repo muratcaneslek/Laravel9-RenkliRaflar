@@ -6,9 +6,6 @@
 <div class="content-wrapper"><br>
 <br>
     <h1>Add Category</h1>
-    
-
-    <form role="form" action="{{route('admin.category.store')}}" method="post">
     <div class="col-xl">
                   <div class="card mb-4">
 
@@ -19,7 +16,7 @@
 
                     <div class="card-body">
 
-                      <form action="{{route('admin.category.store')}}">
+                      <form role="form" action="{{route('admin.category.store')}}" method="post"enctype="multipart/form-data">
                           @csrf
 
                         <div class="mb-3">
@@ -38,10 +35,11 @@
                         </div>
 
                         <div class="mb-3">
-                          <label for="basic-default-fullname" name="image">Choose Image File</label>
+                          
+                          <label for="basic-default-fullname">Choose Image File</label>
                           <div class="input-group">
                             <div class="custom-file">
-                              <input type="file" class="form-control" id="exampleInputFile">
+                              <input type="file" class="form-control" name="image" id="exampleInputFile">
                             </div>
                           </div>
                         </div>
@@ -59,8 +57,6 @@
                     </div>
                   </div>
                 </div>
-    </form>
-
 </div>
 
 @endsection
