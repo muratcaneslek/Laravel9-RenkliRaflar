@@ -5,10 +5,10 @@
 <!-- Content wrapper -->
 <div class="content-wrapper"><br>
     
-    <a href="/admin/category/edit/{{$data->id}}" class="btn btn-block btn-success btn-lg" style="background-color:#003E9F;width:319px;">Edit</a><br>
-    <a href="/admin/category/destroy/{{$data->id}}" class="btn btn-block btn-success btn-lg"
+    <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-block btn-success btn-lg" style="background-color:#003E9F;width:319px;">Edit</a><br>
+    <a href="{{route('admin.category.destroy',['id'=>$data->id])}}" class="btn btn-block btn-success btn-lg"
         onclick="return confirm('Deleting !! Are you sure ?')" style="background-color:red;width:319px">Delete</a>
-    <small class="text-muted float-end"  style="text-align: right; height: 25px;"> <a href="/admin">Home</a></small>
+    <small class="text-muted float-end"  style="text-align: right; height: 25px;"> <a href="{{route('admin.index')}}">Home</a></small>
 
     <div class="card">
                 <h5 class="card-header">Detail Data</h5>

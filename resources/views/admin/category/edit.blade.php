@@ -8,18 +8,18 @@
     <h1>Edit Category: {{$data->title}}</h1>
     
 
-    <form role="form" action="/admin/category/update/{{$data->id}}" method="post">
+    <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
     <div class="col-xl">
                   <div class="card mb-4">
 
                     <div class="card-header d-flex justify-content-between align-items-center">
                       <h3 class="mb-0">Category Elements</h3>
-                      <small class="text-muted float-end"> <a href="/admin">Home</a></small>
+                      <small class="text-muted float-end"> <a href="{{route('admin.index')}}">Home</a></small>
                     </div>
 
                     <div class="card-body">
 
-                      <form action="/admin/category/store">
+                      <form action="{{route('admin.category.store')}}">
                           @csrf
 
                         <div class="mb-3">

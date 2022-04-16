@@ -55,7 +55,7 @@
     @include("admin.header")
 
     @section('sidebar')
-        @include("admin.sidebar")
+    @include("admin.sidebar")
     @show
 
     @yield('content')

@@ -110,7 +110,7 @@
             </li>
             
               <li class="menu-item">
-                <a href="admin/category" class="menu-link">
+                <a href="/admin/category" class="menu-link">
                 <ion-icon class="menu-icon" name="apps-outline"  style="color:red;"></ion-icon>
                 <div data-i18n="Orders">Categories</div>
               </a>

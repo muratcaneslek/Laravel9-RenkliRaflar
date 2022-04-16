@@ -5,8 +5,8 @@
 <!-- Content wrapper -->
 <div class="content-wrapper"><br>
 <br>
-<a href="/admin/category/create" class="btn btn-block btn-success btn-lg" style="background-color:#003E9F;width:319px;">Add Category</a>
-    <small class="text-muted float-end" style="text-align: right; height: 25px;"> <a href="/admin">Home</a>/Category List</small>
+<a href="{{route('admin.category.create')}}" class="btn btn-block btn-success btn-lg" style="background-color:#003E9F;width:319px;">Add Category</a>
+    <small class="text-muted float-end" style="text-align: right; height: 25px;"> <a href="{{route('admin.index')}}">Home</a>/Category List</small>
     <div class="card">
         
                 <h5 class="card-header">Category List</h5>
@@ -36,10 +36,10 @@
                               <td>{{$rs->description}}</td>
                               <td>{{$rs->image}}</td>
                               <td>{{$rs->status}}</td>
-                              <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-info">Edit</a></td>
-                              <td><a href="/admin/category/destroy/{{$rs->id}}" class="btn btn-danger"
+                              <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-info">Edit</a></td>
+                              <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="btn btn-danger"
                                   onclick="return confirm('Deleting !! Are you sure ?')">Delete</a></td>
-                              <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-success">Show</a></td>
+                              <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="btn btn-success">Show</a></td>
                           </tr>
                           
                          @endforeach
