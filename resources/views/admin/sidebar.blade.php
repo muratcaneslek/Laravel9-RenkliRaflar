@@ -118,7 +118,7 @@
             
             
               <li class="menu-item">
-                <a href="javascript:void(0);" class="menu-link">                
+                <a href="/admin/product" class="menu-link">                
                 <ion-icon class="menu-icon" name="cart-outline"  style="color:green;"></ion-icon>
                 <div data-i18n="Orders">Products</div>
               </a>
