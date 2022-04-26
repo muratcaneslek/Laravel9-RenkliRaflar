@@ -3,6 +3,8 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as  AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as  AdminCategoryController;
+use App\Http\Controllers\AdminPanel\ImageController;
+use App\Http\Controllers\AdminPanel\AdminProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,7 +48,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
     });
 
     // **************** Admin Product Routes**************
-    Route::prefix('/product')->name('product.')->controller(App\Http\Controllers\AdminPanel\AdminProductController::class)->group(function(){
+    Route::prefix('/product')->name('product.')->controller(AdminProductController::class)->group(function(){
         Route::get('/','index')->name(name:'index');
         Route::get('/create','create')->name(name:'create');
         Route::post('/store','store')->name(name:'store');
@@ -54,6 +56,16 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::post('/update/{id}','update')->name(name:'update');
         Route::get('/destroy/{id}','destroy')->name(name:'destroy');
         Route::get('/show/{id}','show')->name(name:'show');
+    });
+
+    // **************** Admin Product Image Gallery Routes**************
+    Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function(){
+        Route::get('/{pid}','index')->name(name:'index');
+
+        Route::post('/store/{pid}','store')->name(name:'store');
+        Route::post('/update/{pid}/{id}','update')->name(name:'update');
+        Route::get('/destroy/{pid}/{id}','destroy')->name(name:'destroy');
+        
     });
 
 });
