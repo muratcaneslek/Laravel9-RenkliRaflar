@@ -1,5 +1,10 @@
 @extends('layouts.adminbase')
+
 @section('title','Add Product')
+@section('head')
+  <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+endsection
+
 @section('content')
 
 <!-- Content wrapper -->
@@ -65,9 +70,19 @@
 
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Detail Inf</label>
-                          <textarea class="form-control" name="detail">
+                          <textarea class="form-control" id="detail" name="detail">
 
                           </textarea>
+                          <script>
+                             ClassicEditor
+                                .create( document.querySelector( '#detail' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
+                          </script>
                         </div>
 
                         <div class="mb-3">
