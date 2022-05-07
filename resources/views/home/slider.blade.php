@@ -8,6 +8,8 @@
 							<li data-target="#slider-carousel" data-slide-to="1"></li>
 							<li data-target="#slider-carousel" data-slide-to="2"></li>
 							<li data-target="#slider-carousel" data-slide-to="3"></li>
+							<li data-target="#slider-carousel" data-slide-to="4"></li>
+							<li data-target="#slider-carousel" data-slide-to="5"></li>
 						</ol>
 						
 						<div class="carousel-inner">
@@ -55,9 +57,23 @@
 									<button type="button" class="btn btn-default get">Sayfaya gitmek için</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="{{asset('assets')}}/images/home/4.png" class="girl img-responsive" alt="" />
+									<img src="{{asset('assets')}}/images/home/4.png" class="girl img-responsive" alt="" >
 								</div>
 							</div>
+							@foreach($sliderdata as $rs)
+							<div class="item">
+								<div class="col-sm-6">
+									<h1></h1><br>
+									<h2>{{$rs->title}}</h2><br>
+									<p>Erken al az öde.</p>
+									<button type="button" class="btn btn-default get">Sayfaya gitmek için</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="{{Storage::url($rs->image)}}" class="girl img-responsive" style="width: 390px; height: 355px" alt="" >
+									
+								</div>
+							</div>
+							@endforeach
 							
 						</div>
 						
