@@ -7,9 +7,7 @@
 							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
 							<li data-target="#slider-carousel" data-slide-to="1"></li>
 							<li data-target="#slider-carousel" data-slide-to="2"></li>
-							<li data-target="#slider-carousel" data-slide-to="3"></li>
-							<li data-target="#slider-carousel" data-slide-to="4"></li>
-							<li data-target="#slider-carousel" data-slide-to="5"></li>
+							
 						</ol>
 						
 						<div class="carousel-inner">
@@ -24,42 +22,8 @@
 									<img src="{{asset('assets')}}/images/home/1.png" class="girl img-responsive" alt="" />
 								</div>
 							</div>
-							<div class="item">
-								<div class="col-sm-6">
-									<h1></h1><br>
-									<h2>%50 İndirim</h2><br>
-									<p>Özel setler ve kitaplarda %50 indirim sizleri bekliyor. </p>
-									<button type="button" class="btn btn-default get">Sayfaya gitmek için</button>
-								</div>
-								<div class="col-sm-6">
-									<img src="{{asset('assets')}}/images/home/2.png" class="girl img-responsive" alt="" />
-									
-								</div>
-							</div>
 							
-							<div class="item">
-								<div class="col-sm-6">
-									<h1></h1><br>
-									<h2>Büyük Kampanya</h2><br>
-									<p>Ephesus Yayınlarında %45 indirim sizleri bekliyor.</p>
-									<button type="button" class="btn btn-default get">Sayfaya gitmek için</button>
-								</div>
-								<div class="col-sm-6">
-									<img src="{{asset('assets')}}/images/home/3.png" class="girl img-responsive" alt="" />
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="col-sm-6">
-									<h1></h1><br>
-									<h2>Fırsatı Kaçırma</h2><br>
-									<p>Erken al az öde.</p>
-									<button type="button" class="btn btn-default get">Sayfaya gitmek için</button>
-								</div>
-								<div class="col-sm-6">
-									<img src="{{asset('assets')}}/images/home/4.png" class="girl img-responsive" alt="" >
-								</div>
-							</div>
+							
 							@foreach($sliderdata as $rs)
 							<div class="item">
 								<div class="col-sm-6">

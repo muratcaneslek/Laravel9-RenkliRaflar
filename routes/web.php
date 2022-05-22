@@ -22,6 +22,8 @@ Route::get('/hello', function () {
 
 Route::get('/',[HomeController::class,'index'])->name(name:'home');
 
+Route::get('/product/{id}',[HomeController::class,'product'])->name(name:'product');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
