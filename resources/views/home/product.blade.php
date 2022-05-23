@@ -1,4 +1,4 @@
-@extends('layouts.frontbase')
+@extends('layouts.product')
 
 @section('title','RenkliRaflar')
 

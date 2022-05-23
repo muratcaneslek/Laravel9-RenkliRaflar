@@ -21,10 +21,11 @@ class HomeController extends Controller
 
     public function product($id)
     {
-       
+        $sliderdata=Product::limit(2)->get();
         $data= Product::find($id);
         return view('home.product',[
-            'data'=>$data
+            'data'=>$data,
+            'sliderdata'=>$sliderdata
         ]);
     }
 }

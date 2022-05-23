@@ -26,10 +26,12 @@
 <body>
     @include("home.header")
 
+    @section('sidebar')
+        @include("home.sidebar")
+    @show
+    @yield('content')
 
-    @include("home.slider")
-    @include("home.sidebar") @yield('content')
-    <@include("home.footer") 
+    <@include("home.footer")
     @yield('foot')
 
 </body>

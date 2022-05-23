@@ -24,13 +24,10 @@
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 <body>
-    @include("home.header")
+    @section('sidebar')
+        @include("home.sidebar")
+    @show
 
-
-    @include("home.slider")
-    @include("home.sidebar") @yield('content')
-    <@include("home.footer") 
-    @yield('foot')
 
 </body>
 </html>
