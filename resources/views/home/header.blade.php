@@ -74,6 +74,9 @@
 		</div><!--/header-middle-->
 	
 		<div class="header-bottom"><!--header-bottom-->
+			@php
+				$mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
+			@endphp
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-9">
@@ -88,25 +91,15 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li class="dropdown"><a href="#">Menü<i class="fa fa-angle-down"></i></a>
+								@foreach($mainCategories as $rs)
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">En Çok Satılanlar</a></li>
-										<li><a href="login.html">Çocuk Kitapları</a></li>
-										<li><a href="product-details.html">Romanlar</a></li> 
-										<li><a href="checkout.html">Hikayeler</a></li> 
-										<li><a href="cart.html">Bilim Kitapları</a></li> 
-										<li><a href="login.html">Üniversite Kitapları</a></li>
-										<li><a href="login.html">Bilgisayar</a></li>
-										<li><a href="login.html">Lise Kitapları</a></li>
-										<li><a href="login.html">Yazarlar</a></li> 
-										<li><a href="login.html">Yayınevleri</a></li> 
+										
+                                        <li><a href="shop.html">{{$rs->title}}</a></li>
+										
                                     </ul>
+								@endforeach
                                 </li> 
-								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-										<li><a href="blog-single.html">Blog Single</a></li>
-                                    </ul>
-                                </li>
+								
 								<li><a href="contact-us.html">İletişim</a></li>
 							</ul>
 						</div>

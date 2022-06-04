@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    public static function maincategorylist()
+    {
+        return Category::where('parent_id', '=', 0)->with('children')->get();
+    }
     //
     public function index(){
         $sliderdata=Product::limit(2)->get();
@@ -29,5 +35,10 @@ class HomeController extends Controller
             'productrand2'=>$productrand2,
             'sliderdata'=>$sliderdata
         ]);
+    }
+
+    public function categoryproducts($id){
+        echo "Category product";
+        exit();
     }
 }

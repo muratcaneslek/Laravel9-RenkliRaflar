@@ -14,7 +14,7 @@
 						<div class="col-sm-5">
 							<div class="view-product">
 								<img src="{{Storage::url($data->image)}}" alt="" />
-								<h3>ZOOM</h3>
+							
 							</div>
 							
 

@@ -23,6 +23,7 @@ Route::get('/hello', function () {
 Route::get('/',[HomeController::class,'index'])->name(name:'home');
 
 Route::get('/product/{id}',[HomeController::class,'product'])->name(name:'product');
+Route::get('/categoryproducts/{id}/{slug}',[HomeController::class,'categoryproducts'])->name(name:'categoryproducts');
 
 Route::middleware([
     'auth:sanctum',
