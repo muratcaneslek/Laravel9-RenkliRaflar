@@ -23,8 +23,10 @@ class HomeController extends Controller
     {
         $sliderdata=Product::limit(2)->get();
         $data= Product::find($id);
+        $productrand2=Product::InRandomOrder()->take(6)->get();
         return view('home.product',[
             'data'=>$data,
+            'productrand2'=>$productrand2,
             'sliderdata'=>$sliderdata
         ]);
     }

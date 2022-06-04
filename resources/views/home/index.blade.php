@@ -22,18 +22,21 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="{{Storage::url($rs->image)}}" style="height: 328.25px"alt="" />
+											<a href="{{route('product',['id'=>$rs->id])}}"><img src="{{Storage::url($rs->image)}}" style="height: 328.25px"alt="" /></a>
 											<h2>{{$rs->price}}</h2>
 											<p>{{$rs->title}}</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
-										<div class="product-overlay">
+										<a href="{{route('product',['id'=>$rs->id])}}">
+											<div class="product-overlay">
 											<div class="overlay-content">
 												<h2>{{$rs->price}}</h2>
 												<p>{{$rs->title}}</p>
+												
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
-										</div>
+										</div></a>
+										
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
@@ -59,7 +62,7 @@
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="{{Storage::url($rs->image)}}"style="height: 328.25px" alt="" />
+													<a href="{{route('product',['id'=>$rs->id])}}"><img src="{{Storage::url($rs->image)}}"style="height: 328.25px" alt="" /></a>
 													<h2>{{$rs->price}}</h2>
 													<p>{{$rs->title}}</p>
 													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -77,7 +80,7 @@
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="{{Storage::url($rs->image)}}" style="height: 328.25px" alt="" />
+													<a href="{{route('product',['id'=>$rs->id])}}"><img src="{{Storage::url($rs->image)}}" style="height: 328.25px" alt="" /></a>
 													<h2>{{$rs->price}}</h2>
 													<p>{{$rs->title}}</p>
 													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>

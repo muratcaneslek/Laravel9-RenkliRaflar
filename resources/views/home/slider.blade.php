@@ -30,7 +30,7 @@
 									<h1></h1><br>
 									<h2>{{$rs->title}}</h2><br>
 									<p>Erken al az öde.</p>
-									<button type="button" class="btn btn-default get">Sayfaya gitmek için</button>
+									<a href="{{route('product',['id'=>$rs->id])}}"><button type="button" class="btn btn-default get">Sayfaya gitmek için</button></a>
 								</div>
 								<div class="col-sm-6">
 									<img src="{{Storage::url($rs->image)}}" class="girl img-responsive" style="width: 390px; height: 355px" alt="" >
