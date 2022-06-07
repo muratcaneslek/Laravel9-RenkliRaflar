@@ -26,8 +26,10 @@
 <body>
     @section('sidebar')
         @include("home.sidebar")
+        
     @show
 
+    
 
 </body>
 </html>
