@@ -142,7 +142,7 @@
             
             
               <li class="menu-item">
-                <a href="javascript:void(0);" class="menu-link">                
+                <a href="{{route('admin.message.index')}}" class="menu-link">                
                 <ion-icon class="menu-icon" name="chatbubbles-outline"style="color:#DE9906;"></ion-icon>
                 <div data-i18n="Orders">Messages</div>
               </a>
