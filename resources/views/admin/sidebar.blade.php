@@ -134,7 +134,7 @@
             
            
               <li class="menu-item">
-                <a href="javascript:void(0);" class="menu-link">                
+                <a href="{{route('admin.faq.index')}}" class="menu-link">                
                 <ion-icon class="menu-icon" name="help-outline" style="color:#08CC68;"></ion-icon>
                 <div data-i18n="Orders">FAQ</div>
               </a>

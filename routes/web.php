@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminPanel\HomeController as  AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as  AdminCategoryController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
+use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\AdminProductController;
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::get('/aboutus',[HomeController::class,'aboutus'])->name(name:'aboutus');
 Route::get('/references',[HomeController::class,'references'])->name(name:'references');
 Route::get('/contact',[HomeController::class,'contact'])->name(name:'contact');
 Route::post('/storemessage',[HomeController::class,'storemessage'])->name(name:'storemessage');
+Route::get('/faq',[HomeController::class,'faq'])->name(name:'faq');
 
 
 Route::get('/product/{id}',[HomeController::class,'product'])->name(name:'product');
@@ -89,6 +91,18 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::post('/update/{id}','update')->name(name:'update');
         Route::get('/destroy/{id}','destroy')->name(name:'destroy');
         
+    });
+
+
+    // **************** Admin Faq Routes**************
+    Route::prefix('/faq')->name('faq.')->controller(FaqController::class)->group(function(){
+        Route::get('/','index')->name(name:'index');
+        Route::get('/create','create')->name(name:'create');
+        Route::post('/store','store')->name(name:'store');
+        Route::get('/edit/{id}','edit')->name(name:'edit');
+        Route::post('/update/{id}','update')->name(name:'update');
+        Route::get('/destroy/{id}','destroy')->name(name:'destroy');
+        Route::get('/show/{id}','show')->name(name:'show');
     });
 
 });

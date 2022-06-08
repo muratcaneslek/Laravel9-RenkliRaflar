@@ -107,6 +107,7 @@
 										<li><a href="{{route('references')}}">References </a></li>
 									</ul>
 								</li>
+								<li class="dropdown"><a href="{{route('faq')}}">FAQ <i class="fa"></i></a></li>
 							</ul>
 
 						</div>
