@@ -19,8 +19,11 @@ Route::get('/hello', function () {
     return 'Hello World';
 });
 
-
+// **************** Home Page Routes**************
 Route::get('/',[HomeController::class,'index'])->name(name:'home');
+Route::get('/aboutus',[HomeController::class,'aboutus'])->name(name:'aboutus');
+Route::get('/references',[HomeController::class,'references'])->name(name:'references');
+Route::get('/contact',[HomeController::class,'contact'])->name(name:'contact');
 
 Route::get('/product/{id}',[HomeController::class,'product'])->name(name:'product');
 Route::get('/categoryproducts/{id}/{slug}',[HomeController::class,'categoryproducts'])->name(name:'categoryproducts');

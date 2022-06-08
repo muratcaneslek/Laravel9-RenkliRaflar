@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -23,6 +24,30 @@ class HomeController extends Controller
            'productlist1'=>$productlist1,
            'productrand'=>$productrand
        ]);
+    }
+
+    public function aboutus(){
+        
+        $setting = Setting:: first();
+        return view('home.aboutus',[
+            'setting'=>$setting,
+        ]);
+    }
+
+    public function contact(){
+       
+        $setting = Setting:: first();
+        return view('home.contact',[
+            'setting'=>$setting,
+        ]);
+    }
+
+    public function references(){
+        
+        $setting = Setting:: first();
+        return view('home.references',[
+            'setting'=>$setting,
+        ]);
     }
 
     public function product($id)

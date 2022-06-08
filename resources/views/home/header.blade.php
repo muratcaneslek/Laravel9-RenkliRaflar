@@ -100,8 +100,15 @@
 								@endforeach
                                 </li> 
 								
-								<li><a href="contact-us.html">İletişim</a></li>
+								<li class="dropdown"><a href="#">Pages <i class="fa fa-angle-down"></i></a>
+									<ul role="menu" class="sub-menu">
+										<li><a href="{{route('contact')}}">Contact </a></li>
+										<li><a href="{{route('aboutus')}}">About Us </a></li>
+										<li><a href="{{route('references')}}">References </a></li>
+									</ul>
+								</li>
 							</ul>
+
 						</div>
 					</div>
 					<div class="col-sm-3">
