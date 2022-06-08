@@ -164,7 +164,7 @@
               </li>
 
               <li class="menu-item">
-                <a href="javascript:void(0);" class="menu-link">                
+                <a href="/admin/setting" class="menu-link">                
                 <ion-icon class="menu-icon" name="settings-outline" style="color:red;"></ion-icon>
                 <div data-i18n="Orders">Settings</div>
               </a>
