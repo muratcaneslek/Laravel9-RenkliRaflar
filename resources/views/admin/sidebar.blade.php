@@ -126,7 +126,7 @@
             
             
               <li class="menu-item">
-                <a href="javascript:void(0);" class="menu-link">
+                <a href="{{route('admin.comment.index')}}" class="menu-link">
                 <ion-icon class="menu-icon" name="chatbox-ellipses-outline" style="color:blue;"></ion-icon>
                 <div data-i18n="Orders">Comments</div>
               </a>

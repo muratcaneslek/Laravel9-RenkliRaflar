@@ -22,6 +22,7 @@
 						<div class="col-sm-7">
 							<div class="product-information"><!--/product-information-->
 								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
+								@include('home.messages')
 								<h2>{{$data->title}}</h2>
 								<p>Product ID : {{$data->id}}</p>
 								
@@ -45,13 +46,13 @@
 					<div class="category-tab shop-details-tab"><!--category-tab-->
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
-								<li><a href="#details" data-toggle="tab">Description</a></li>
+								<li class="active"><a href="#details" data-toggle="tab">Description</a></li>
 							
-								<li class="active"><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
+								<li><a href="#reviews" data-toggle="tab">Reviews</a></li>
 							</ul>
 						</div>
 						<div class="tab-content">
-							<div class="tab-pane fade" id="details" >
+							<div class="tab-pane fade active in" id="details" >
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
 										<div class="single-products">
@@ -64,22 +65,62 @@
 								</div>
 							</div>
 							
-							<div class="tab-pane fade active in" id="reviews" >
+							<div class="tab-pane fade " id="reviews" >
 								<div class="col-sm-12">
+									@foreach($reviews as $rs)
+										<div class="single-review">
+											<div class="review-heading">
+												<div><a href="#"><i class=""fa fa-user-o></i>{{$rs->user->name}}</a></div>
+												<div><a href="#"><i class=""fa fa-clock-o></i>{{$rs->created_at}}</a></div>
+												<div class="review-rating pull-right">
+													<i class="fa fa-star" @if ($rs->rate<1) -o empty @endif></i>
+													<i class="fa fa-star" @if ($rs->rate<2) -o empty @endif></i>
+													<i class="fa fa-star" @if ($rs->rate<3) -o empty @endif></i>
+													<i class="fa fa-star" @if ($rs->rate<4) -o empty @endif></i>
+													<i class="fa fa-star" @if ($rs->rate<5) -o empty @endif></i>
+
+												</div>
+											</div>
+											<div class="review-body">
+												<strong>{{$rs->subject}}</strong>
+												<p>{{$rs->review}}</p>
+
+											</div>
+										</div>
+										@endforeach
 									
 									
 									<p><b>Write Your Review</b></p>
 									
-									<form action="#">
+									<form action="{{route('storecomment')}}" method="post">
+										@csrf
 										<span>
-											<input type="text" placeholder="Your Name"/>
-											<input type="email" placeholder="Email Address"/>
+											<input class="input" type="hidden" name="product_id" value="{{$data->id}}" />
+											<input class="input" type="text" name="subject" placeholder="Subject"/>
+											
 										</span>
-										<textarea name="" ></textarea>
-							
-										<button type="button" class="btn btn-default pull-right">
-											Submit
-										</button>
+										<textarea class="input" name="review" placeholder="Your Review"></textarea>
+										<div class="form-group">
+											<div class="input-rating">
+												<strong>Your Rating: </strong>
+												<div class="stars">
+													<input type="radio" id="star1" name="rate" value="1" ><label for="star1"></label>
+													<input type="radio" id="star2" name="rate" value="2" ><label for="star2"></label>
+													<input type="radio" id="star3" name="rate" value="3" ><label for="star3"></label>
+													<input type="radio" id="star4" name="rate" value="4" ><label for="star4"></label>
+													<input type="radio" id="star5" name="rate" value="5" ><label for="star5"></label>
+													
+													
+													
+													
+												</div>
+											</div>
+										</div>
+										@auth
+										<button>Submit</button>
+										@else
+										<a href="/login">For Submit Your Review, Please Login</a>
+										@endauth
 									</form>
 								</div>
 							</div>
