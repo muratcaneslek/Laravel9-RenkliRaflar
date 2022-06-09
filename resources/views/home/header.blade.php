@@ -61,11 +61,20 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Profil</a></li>
-								<li><a href="#"><i class="fa fa-star"></i> İstek Listesi</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Ödeme Yöntemleri</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Sepetim</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i>Giriş Yap</a></li>
+								@auth
+								<li><a href="#"><i class="fa fa-user"></i> {{Auth::user()->name}}</a>
+									
+										<li>
+										<li><a href="/logoutuser"><i class="fa fa-lock"></i>Logout</a></li>
+										</li>
+									
+								</li>
+								@endauth
+								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i>Checkout</a></li>
+								@guest
+								<li><a href="/loginuser"><i class="fa fa-lock"></i>Login</a></li>
+								<li><a href="/registeruser"><i class="fa fa-lock"></i>Join</a></li>
+								@endguest
 							</ul>
 						</div>
 					</div>
