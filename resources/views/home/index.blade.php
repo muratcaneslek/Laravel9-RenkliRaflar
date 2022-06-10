@@ -25,17 +25,9 @@
 											<a href="{{route('product',['id'=>$rs->id])}}"><img src="{{Storage::url($rs->image)}}" style="height: 328.25px"alt="" /></a>
 											<h2>{{$rs->price}}</h2>
 											<p>{{$rs->title}}</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<a href="{{route('shopcart.add',['id'=>$rs->id])}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
-										<a href="{{route('product',['id'=>$rs->id])}}">
-											<div class="product-overlay">
-											<div class="overlay-content">
-												<h2>{{$rs->price}}</h2>
-												<p>{{$rs->title}}</p>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-										</div></a>
+										
 										
 								</div>
 								<div class="choose">
@@ -65,7 +57,7 @@
 													<a href="{{route('product',['id'=>$rs->id])}}"><img src="{{Storage::url($rs->image)}}"style="height: 328.25px" alt="" /></a>
 													<h2>{{$rs->price}}</h2>
 													<p>{{$rs->title}}</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+													<a href="{{route('shopcart.add',['id'=>$rs->id])}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 												</div>
 												
 											</div>
@@ -83,13 +75,13 @@
 													<a href="{{route('product',['id'=>$rs->id])}}"><img src="{{Storage::url($rs->image)}}" style="height: 328.25px" alt="" /></a>
 													<h2>{{$rs->price}}</h2>
 													<p>{{$rs->title}}</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+													<a href="{{route('shopcart.add',['id'=>$rs->id])}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 												</div>
 												
 											</div>
 										</div>
 									</div>
-									@endforeach
+									@endforeach				
 								</div>
 							</div>
 							 <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
