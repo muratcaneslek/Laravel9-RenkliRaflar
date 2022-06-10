@@ -17,5 +17,10 @@ class Product extends Model
     {
         return $this->belongsTo(Comment::class);
     }
+
+    public function shopcart()
+    {
+        return $this->hasMany(ShopCart::class);
+    }
     
 }

@@ -71,7 +71,9 @@
 								</li>
 								@endauth
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i>Checkout</a></li>
+								<li><a href="{{route('shopcart.index')}}"><i class="fa fa-shopping-cart"></i>ShopCart</a></li>
 								@guest
+								
 								<li><a href="/loginuser"><i class="fa fa-lock"></i>Login</a></li>
 								<li><a href="/registeruser"><i class="fa fa-lock"></i>Join</a></li>
 								@endguest

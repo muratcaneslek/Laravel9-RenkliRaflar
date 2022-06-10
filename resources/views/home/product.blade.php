@@ -28,12 +28,19 @@
 								
 								<span>
 									<span>{{$data->price}} ₺</span>
-									<label>Quantity:</label>
-									<input type="text" value="1" />
-									<button type="button" class="btn btn-fefault cart">
-										<i class="fa fa-shopping-cart"></i>
-										Add to cart
-									</button>
+									<form action="{{route('shopcart.store')}}" method="post">
+										@csrf
+										<div>
+											<label>Quantity:</label>
+											<input name="quantity" type="number" value="1" min="1">
+											<input name="id" type="hidden" value="{{$data->id}}">
+										</div>
+										<button type="submit" class="btn btn-fefault cart">
+											<i class="fa fa-shopping-cart"></i>
+											Add to cart
+										</button>
+									</form>
+									
 								</span>
 								<p><b>Availability:</b>{{$data->status}}</p>
 								<p><b>Condition:</b> New</p>
