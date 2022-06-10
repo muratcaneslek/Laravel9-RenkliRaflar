@@ -150,7 +150,7 @@
             
             
               <li class="menu-item">
-                <a href="javascript:void(0);" class="menu-link">                
+                <a href="{{route('admin.user.index')}}" class="menu-link">                
                 <ion-icon class="menu-icon" name="person-outline" 10F2CA style="color:#0ABBAC;"></ion-icon>
                 <div data-i18n="Orders">Users</div>
               </a>

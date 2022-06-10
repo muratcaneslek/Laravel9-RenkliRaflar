@@ -72,7 +72,7 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Address</label>
-                                <input type="text" class="form-control" id="basic-default-fullname" value="{{$data->address}}" placeholder="Address" name="address">
+                                <input type="text" class="form-control" id="basic-default-fullname" value="{{$data->addrress}}" placeholder="Address" name="address">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Phone</label>

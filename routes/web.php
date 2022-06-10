@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\CommentController;
+use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\AdminProductController;
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,9 @@ Route::post('/storecomment',[HomeController::class,'storecomment'])->name(name:'
 Route::view('/loginuser','home.login');
 Route::view('/registeruser','home.register');
 Route::get('/logoutuser',[HomeController::class,'logout'])->name(name:'logoutuser');
+Route::view('/loginadmin','admin.login');
+Route::post('/loginadmincheck',[HomeController::class,'loginadmincheck'])->name(name:'loginadmincheck');
+
 
 Route::get('/product/{id}',[HomeController::class,'product'])->name(name:'product');
 Route::get('/categoryproducts/{id}/{slug}',[HomeController::class,'categoryproducts'])->name(name:'categoryproducts');
@@ -116,6 +120,18 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('/show/{id}','show')->name(name:'show');
         Route::post('/update/{id}','update')->name(name:'update');
         Route::get('/destroy/{id}','destroy')->name(name:'destroy');
+        
+    });
+
+    // **************** Admin User Routes**************
+    Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->group(function(){
+        Route::get('/','index')->name(name:'index');
+        Route::get('/edit/{id}','edit')->name(name:'edit');
+        Route::get('/show/{id}','show')->name(name:'show');
+        Route::post('/update/{id}','update')->name(name:'update');
+        Route::get('/destroy/{id}','destroy')->name(name:'destroy');
+        Route::post('/addrole/{id}','addrole')->name(name:'addrole');
+        Route::get('/destroyrole/{uid}/{rid}','destroyrole')->name(name:'destroyrole');
         
     });
 
