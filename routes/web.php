@@ -57,6 +57,8 @@ Route::middleware('auth')->group(function(){
     // **************** User Routes**************
     Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function(){
         Route::get('/','index')->name(name:'index');
+        Route::get('/reviews','reviews')->name(name:'reviews');
+        Route::get('/reviewdestroy/{id}','reviewdestroy')->name(name:'reviewdestroy');
 
 
     });

@@ -70,8 +70,8 @@
 									@foreach($reviews as $rs)
 										<div class="single-review">
 											<div class="review-heading">
-												<div><a href="#"><i class=""fa fa-user-o></i>{{$rs->user->name}}</a></div>
-												<div><a href="#"><i class=""fa fa-clock-o></i>{{$rs->created_at}}</a></div>
+												<div><a href="#"><i class="fa fa-user"></i>{{$rs->user->name}}</a></div>
+												<div><a href="#"><i class="fa fa-clock"></i>{{$rs->created_at}}</a></div>
 												<div class="review-rating pull-right">
 													<i class="fa fa-star" @if ($rs->rate<1) -o empty @endif></i>
 													<i class="fa fa-star" @if ($rs->rate<2) -o empty @endif></i>
