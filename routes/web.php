@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminPanel\CategoryController as  AdminCategoryControll
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\AdminPanel\FaqController;
+use App\Http\Controllers\AdminPanel\OrderController;
 use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\AdminProductController;
@@ -62,7 +63,7 @@ Route::middleware('auth')->group(function(){
         Route::get('/reviewdestroy/{id}','reviewdestroy')->name(name:'reviewdestroy');
         Route::get('/orders','orders')->name(name:'orders');
         Route::get('/orderdetail/{id}','orderdetail')->name(name:'orderdetail');
-
+        Route::get('/cancelproduct/{id}','cancelproduct')->name(name:'cancelproduct');
 
     });
 
@@ -165,6 +166,21 @@ Route::middleware('auth')->group(function(){
             Route::post('/addrole/{id}','addrole')->name(name:'addrole');
             Route::get('/destroyrole/{uid}/{rid}','destroyrole')->name(name:'destroyrole');
             
+        });
+
+
+        // **************** Admin Orders Routes**************
+        Route::prefix('/order')->name('order.')->controller(OrderController::class)->group(function(){
+            Route::get('/{slug}','index')->name(name:'index');
+            Route::get('/create','create')->name(name:'create');
+            Route::post('/store','store')->name(name:'store');
+            Route::get('/edit/{id}','edit')->name(name:'edit');
+            Route::post('/update/{id}','update')->name(name:'update');
+            Route::get('/destroy/{id}','destroy')->name(name:'destroy');
+            Route::get('/show/{id}','show')->name(name:'show');
+            Route::get('/cancelorder/{id}','cancelorder')->name(name:'cancelorder');
+            Route::get('/cancelproduct/{id}','cancelproduct')->name(name:'cancelproduct');
+            Route::get('/acceptproduct/{id}','acceptproduct')->name(name:'acceptproduct');
         });
 
     });

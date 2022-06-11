@@ -48,7 +48,8 @@
 							<td class="price">Price</td>
 							<td class="quantity">Quantity</td>
 							<td class="total">Total</td>
-							<td></td>
+							<td>Status</td>
+							<td>..</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -56,10 +57,10 @@
                         @foreach($orderproducts as $rs)
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="{{Storage::url($rs->product->image)}}" style="width:33px" alt=""></a>
+								<img src="{{Storage::url($rs->product->image)}}" style="width:33px" alt="">
 							</td>
 							<td class="cart_description">
-								<h4><a href="">{{$rs->product->title}}</a></h4>
+								<h4><a href="#">{{$rs->product->title}}</a></h4>
 								
 							</td>
 							<td class="cart_price">
@@ -71,10 +72,14 @@
 							<td class="cart_total">
 								<p class="cart_total_price">{{$rs->amount}}</p>
 							</td>
+							<td class="cart_price">
+								{{$rs->status}}
+							</td>
 							<td class="cart_delete">
-								
-                                <a href="#" class="cart_quantity_delete"
-                                  onclick="return confirm('Deleting !! Are you sure ?')"><i class="fa fa-times"></i></a>
+								@if($rs->status == "New")
+                                <a href="{{route('userpanel.cancelproduct',['id'=>$rs->id])}}" class="cart_quantity_delete"
+                                  onclick="return confirm('Cancel !! Are you sure ?')"><i class="fa fa-times"></i></a>
+								@endif
 							</td>
 						</tr>
 

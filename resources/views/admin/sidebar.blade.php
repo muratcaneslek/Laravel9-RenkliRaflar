@@ -84,23 +84,28 @@
 
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="layouts-container.html" class="menu-link">
+                  <a href="/admin/order/New" class="menu-link">
 
                     <div data-i18n="neworders">New Orders</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
+                  <a href="/admin/order/Accepted" class="menu-link">
                     <div data-i18n="acceptedorders">Accepted Orders</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
+                  <a href="/admin/order/Shipped" class="menu-link">
                     <div data-i18n="shippingorders">Shipping Orders</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="layouts-container.html" class="menu-link">
+                  <a href="/admin/order/Cancelled" class="menu-link">
+                    <div data-i18n="shippingorders">Cancelled Orders</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="/admin/order/Completed" class="menu-link">
                     <div data-i18n="completedorders">Completed Orders</div>
                   </a>
                 </li>
