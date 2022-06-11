@@ -22,5 +22,10 @@ class Product extends Model
     {
         return $this->hasMany(ShopCart::class);
     }
+
+    public function orderproduct()
+    {
+        return $this->hasMany(OrderProduct::class);
+    }
     
 }

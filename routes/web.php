@@ -60,6 +60,8 @@ Route::middleware('auth')->group(function(){
         Route::get('/','index')->name(name:'index');
         Route::get('/reviews','reviews')->name(name:'reviews');
         Route::get('/reviewdestroy/{id}','reviewdestroy')->name(name:'reviewdestroy');
+        Route::get('/orders','orders')->name(name:'orders');
+        Route::get('/orderdetail/{id}','orderdetail')->name(name:'orderdetail');
 
 
     });
@@ -73,6 +75,9 @@ Route::middleware('auth')->group(function(){
         Route::post('/update/{id}','update')->name(name:'update');
         Route::get('/destroy/{id}','destroy')->name(name:'destroy');
         Route::get('/show/{id}','show')->name(name:'show');
+        Route::post('/order','order')->name(name:'order');
+        Route::post('/storeorder','storeorder')->name(name:'storeorder');
+        Route::get('/ordercomplete','ordercomplete')->name(name:'ordercomplete');
     });
 
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Comment;
+use App\Models\Order;
+use App\Models\OrderProduct;
 
 class UserController extends Controller
 {
@@ -23,6 +25,25 @@ class UserController extends Controller
         $comments = Comment::where('user_id','=',Auth::id())->get();
         return view('home.user.comments',[
             'comments'=>$comments,
+        ]);
+    }
+
+    public function orderdetail($id){
+
+        $order = Order::find($id);
+        $orderproducts = OrderProduct::where('order_id','=','$id')->get();
+        return view('home.user.orderdetail',[
+            'order'=>$order,
+            'orderproducts'=>$orderproducts,
+        ]);
+        
+    }
+
+    public function orders()
+    {
+        $data = Order::where('user_id','=',Auth::id())->get();
+        return view('home.user.orders',[
+            'data'=>$data,
         ]);
     }
 
@@ -99,4 +120,7 @@ class UserController extends Controller
         $data->delete();
         return redirect(route('userpanel.reviews'));
     }
+    
+    
+    
 }

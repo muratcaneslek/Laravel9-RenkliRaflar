@@ -1,24 +1,45 @@
 @extends('layouts.login')
 
-@section('title', 'User ShopCart')
+@section('title', 'User Order Detail')
 
 @section('content')
 
 <div class="container">
 	<div class="row">
      	
-	    		<div class="col-sm-2">
+	    		<div class="col-sm-3">
 	    			<div class="contact-form">
-	    				<h2 class="title text-center">User ShopCart</h2>
+	    				<h2 class="title text-center">User Order Detail</h2>
 						
 	    			</div>
                     @include('home.user.usermenu')
 	    		</div>
-	    		<div class="col-sm-10">
+	    		<div class="col-sm-9">
                     <div class="review-payment">
-				        <h2>ShopCart List</h2>
+				        <h2>Order Items</h2>
 			        </div>
                     <div class="table-responsive cart_info">
+                    <table class="table table-condensed">
+                        <tr>
+                            <th>Name :</th><td>{{$order->name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Phone :</th><td>{{$order->phone}}</td>
+                        </tr>
+                        <tr>
+                            <th>Email :</th><td>{{$order->email}}</td>
+                        </tr>
+                        <tr>
+                            <th>Address :</th><td>{{$order->address}}</td>
+                        </tr>
+                        <tr>
+                            <th>Note :</th><td>{{$order->note}}</td>
+                        </tr>
+                        <tr>
+                            <th>Status :</th><td>{{$order->status}}</td>
+                        </tr>
+                        </table>
+
 				    <table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
@@ -31,10 +52,8 @@
 						</tr>
 					</thead>
 					<tbody>
-                        @php
-                            $total=0;
-                        @endphp
-                        @foreach($data as $rs)
+                       
+                        @foreach($orderproducts as $rs)
 						<tr>
 							<td class="cart_product">
 								<a href=""><img src="{{Storage::url($rs->product->image)}}" style="width:33px" alt=""></a>
@@ -47,27 +66,18 @@
 								<p>{{$rs->product->price}}</p>
 							</td>
 							<td class="cart_quantity">
-                                <form action="{{route('shopcart.update',['id' => $rs->id])}}" method="post">
-                                @csrf
-								
-									
-                                        <input type="number" name="quantity" value="{{$rs->quantity}}" min="1" max="{{$rs->product->quantity}}" onchance="this.form.submit()">
-								
-                                 </form>
+                                <p>{{$rs->quantity}}</p>
 							</td>
 							<td class="cart_total">
-								<p class="cart_total_price">{{$rs->product->price * $rs->quantity}}</p>
+								<p class="cart_total_price">{{$rs->amount}}</p>
 							</td>
 							<td class="cart_delete">
 								
-                                <a href="{{route('shopcart.destroy',['id'=>$rs->id])}}" class="cart_quantity_delete"
+                                <a href="#" class="cart_quantity_delete"
                                   onclick="return confirm('Deleting !! Are you sure ?')"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 
-                        @php
-                            $total += $rs->product->price * $rs->quantity;
-                        @endphp
                         @endforeach
 						<tr>
 							<td colspan="4">&nbsp;</td>
@@ -75,15 +85,11 @@
 								<table class="table table-condensed total-result">
 									<tr>
 										<td>Total</td>
-										<td><span>{{$total}}</span></td>
+										<td><span>{{$order->total}}</span></td>
 									</tr>
 
 								</table>
-								<form action="{{route('shopcart.order')}}" method="post">
-									@csrf
-									<input name="total" value="{{$total}}" type="hidden">
-                                	<button type="submit">Place Order</button>
-								</form>
+								
 							</td>
 						</tr>
                         
