@@ -53,7 +53,9 @@ class OrderController extends Controller
     public function show($id)
     {   
         $data= Order::find($id);
+        
         $datalist= OrderProduct::where('order_id',$id)->get();
+        
         //dd($data);
         return view('admin.order.show',[
             'data'=> $data,

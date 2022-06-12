@@ -81,23 +81,23 @@
                       <thead>
                         <tr>
                           <th>Id</th>
-                          <th>Category</th>
+                          
                           <th>Title</th>
                           <th>Price</th>
                           <th>Quantity</th>
                           <th>Amount</th>
                           <th>Image</th>
                           <th>Image Gallery</th>
-                          <th>Status</th>
+                          <th>Status / Cancel</th>
                           
-                          <th style="width: 40px">Cancel</th>
+                          
                         </tr>
                       </thead>
                       <tbody>
                           @foreach( $datalist as $rs)
                           <tr>
                               <td>{{$rs->id}}</td>
-                              <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category, $rs->category->title)}}</td>
+
                               <td>{{$rs->product->title}}</td>
                               <td>{{$rs->price}}</td>
                               <td>{{$rs->quantity}}</td>

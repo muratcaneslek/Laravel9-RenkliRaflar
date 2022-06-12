@@ -19,7 +19,7 @@
 									<button type="button" class="btn btn-default get">Sayfaya gitmek için</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="{{asset('assets')}}/images/home/1.png" class="girl img-responsive" alt="" />
+									<img src="{{Storage::url($sliderdata[0]->image)}}" class="girl img-responsive" style="width: 390px; height: 355px" alt="" />
 								</div>
 							</div>
 							
