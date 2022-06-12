@@ -53,7 +53,6 @@
 						</tr>
 					</thead>
 					<tbody>
-                       
                         @foreach($orderproducts as $rs)
 						<tr>
 							<td class="cart_product">

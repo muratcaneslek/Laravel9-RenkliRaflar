@@ -8,8 +8,8 @@
 		<div class="container">
 			<div class="row">
 				
-				<div class="col-sm-9 padding-right">
-					<div class="features_items"><!--features_items-->
+				<div class="col-sm-9 padding-right" style="position:absolute;top: 23%;left:29%;">
+					<div class="features_items"style="width:90%" ><!--features_items-->
 						<h2 class="title text-center">{{$category->title}} Items</h2>
 						@foreach($products as $rs)
                         <div class="col-sm-4">

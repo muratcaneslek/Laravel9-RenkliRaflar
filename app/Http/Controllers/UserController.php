@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Comment;
 use App\Models\Order;
 use App\Models\OrderProduct;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -31,10 +32,14 @@ class UserController extends Controller
     public function orderdetail($id){
 
         $order = Order::find($id);
-        $orderproducts = OrderProduct::where('order_id','=','$id')->get();
+        
+        $orderproducts =OrderProduct::where('order_id','=',$id)->get();
+        //dd($orderproducts);
+       // $deneme=DB::table('order_products')->where('order_id',$id)->get();
         return view('home.user.orderdetail',[
             'order'=>$order,
             'orderproducts'=>$orderproducts,
+            //'deneme'=>$deneme,
         ]);
         
     }
@@ -108,9 +113,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function cancelproduct($id)
     {
-        //
+        $data = OrderProduct::find($id);
+        $data->delete();
+        return redirect()->back()->with('info','Canceled...');
     }
 
     public function reviewdestroy($id)

@@ -79,6 +79,7 @@ Route::middleware('auth')->group(function(){
         Route::post('/order','order')->name(name:'order');
         Route::post('/storeorder','storeorder')->name(name:'storeorder');
         Route::get('/ordercomplete','ordercomplete')->name(name:'ordercomplete');
+        Route::get('/userpanel',[UserController::class,'userpanel']);
     });
 
 
